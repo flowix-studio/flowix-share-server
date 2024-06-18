@@ -1,0 +1,31 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "flowix_share_server"
+authors = [{name = "somehitDev", email = "this.dev.somehit@gmail.com"}]
+license = {file = "LICENSE"}
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX",
+    "Operating System :: Microsoft :: Windows",
+
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Application"
+]
+dynamic = ["version", "description"]
+dependencies = [
+    "bottle==0.12.25",
+    "Jinja2==3.1.4"
+]
+
+[project.urls]
+Home = "https://github.com/somehitDev/Flowix-Share-Server"
+
+[project.scripts]
+flowix_share_server = "flowix_share_server.__main__:run_cli"

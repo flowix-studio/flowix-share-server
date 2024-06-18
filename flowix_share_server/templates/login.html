@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Login(Flowix Share Server){% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="/assets/login.css">
+<script type="text/javascript" src="/assets/login.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="ID" required>
+    <input type="password" id="password" placeholder="PW" onkeypress="javascript:if(event.keyCode==13) {login()}" required>
+    <button onclick="login()">Login</button>
+</div>
+{% endblock %}

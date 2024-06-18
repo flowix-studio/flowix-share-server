@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Register(Flowix Share Server){% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="/assets/register.css">
+<script type="text/javascript" src="/assets/register.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="register-container">
+    <h2>Register</h2>
+    <input type="text" id="username" placeholder="ID" autocomplete="off" required>
+    <input type="password" id="password" placeholder="PW" onkeypress="javascript:if(event.keyCode==13) {register()}" required>
+    <button onclick="register()">Register</button>
+</div>
+
+<script type="text/javascript">
+   if ({{ user_exists | tojson | safe }}) {
+        window.alert("Registered user exists!\nRedirect to Login page!");
+        window.location.href = "/login";
+   }
+</script>
+{% endblock %}

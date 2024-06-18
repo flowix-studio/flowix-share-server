@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Flowix Share Server{% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="/assets/board.css">
+<!-- <script type="text/javascript" src="/assets/board.js"></script> -->
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="panel">
+        <h2>TOKENS</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>TOKEN</th>
+                </tr>
+            </thead>
+            <tbody id="tokens_tbody">
+                {% for row in token_list %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="panel" id="panel_shared">
+        <h2>SHARED</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>MANAGER</th>
+                    <th>ID</th>
+                    <th>TYPE</th>
+                    <th>OBJECT</th>
+                </tr>
+            </thead>
+            <tbody id="shared_tbody">
+                {% for row in shared_list %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>**********</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
